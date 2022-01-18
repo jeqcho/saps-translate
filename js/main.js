@@ -17,7 +17,7 @@ function processFile(event) {
 }
 
 function uploaded(){
-  document.getElementById('file-label').innerHTML="Translation complete!";
+  document.getElementById('file-label').innerHTML="Translation complete! Press preview or download below";
   document.getElementById('custom-file-upload').classList.add('bg-info');
   document.getElementById('custom-file-upload').classList.add('text-white');
   document.getElementById('preview').disabled=false;
