@@ -33,7 +33,7 @@
                 <div class="form-group">
                     <label id="custom-file-upload" class="lead" ondrop="processFile(event)"
                         ondragover="dragOverHandler(event);">
-                        <input type="file" id="file-selector" accept=".html" onchange="processFile(event)">
+                        <input type="file" id="file-selector" accept=".html" onclick="purge()" oninput="processFile(event)">
                         <span id='file-label'>Drag file here or <u>click here</u> to choose</span>
                     </label>
                 </div>
@@ -45,6 +45,7 @@
             </div>
         <ol>
             <li>School logo and teacher comments will be removed.</li>
+            <li>English translation of transcripts required by US universities.</li>
             <li>Translation of transcript is done locally on your computer. No data is sent online.</li>
             <li>Thanks for using. Feedback email to chooijqweb@gmail.com </li>
         </ol>
