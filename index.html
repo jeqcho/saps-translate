@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Translate SAPS NKRA Online</title>
-    <meta name="description" content="Translate (SAPS NKRA) SPM Malaysian school result transcripts from Malay to English">
+    <meta name="description"
+        content="Translate (SAPS NKRA) SPM Malaysian school result transcripts from Malay to English">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="main.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -19,7 +20,8 @@
         NKRA from Malay to English using the official subject names from SPM.
         <h2>How to translate SAPS</h2>
         <ol>
-            <li>At <a target="_blank" href="https://sapsnkra.moe.gov.my/ibubapa2/index.php">SAPS</a>, choose <b>Papar Slip Keputusan</b>
+            <li>At <a target="_blank" href="https://sapsnkra.moe.gov.my/ibubapa2/index.php">SAPS</a>, choose <b>Papar
+                    Slip Keputusan</b>
             </li>
             <li>Save the page by pressing <kbd>⌘</kbd>+<kbd>S</kbd> for Mac or <kbd>Ctrl</kbd>+<kbd>S</kbd> for Windows
             </li>
@@ -30,20 +32,24 @@
         <form enctype="multipart/form-data" action="/" method="post" target="_blank">
             <div>
                 <div class="form-group">
-                    <label id="custom-file-upload" class="lead"  ondrop="processFile(event)" ondragover="dragOverHandler(event);">
+                    <label id="custom-file-upload" class="lead" ondrop="processFile(event)"
+                        ondragover="dragOverHandler(event);">
                         <input type="file" id="file-selector" accept=".html" onchange="processFile(event)">
-                        <span id='file-label'>Drag file here or <u>click here</u>  to choose</span>
+                        <span id='file-label'>Drag file here or <u>click here</u> to choose</span>
                     </label>
                 </div>
                 <div class="form-group">
                     <input disabled id="preview" class="btn btn-success" value="Preview" onclick="previewTranscript()">
-                    <input disabled id="print" class="btn btn-success" value="Print/Download PDF" onclick="printJS('output', 'html')">
+                    <input disabled id="print" class="btn btn-success" value="Print/Download PDF"
+                        onclick="printJS('output', 'html')">
                 </div>
             </div>
         </form>
-        <p>Note: school logo and teacher comments will be removed.</p>
-        <p>Feedback email to chooijqweb@gmail.com </p>
-
+        <ol>
+            <li>School logo and teacher comments will be removed.</li>
+            <li>Translation of transcript is done locally on your computer. No data is sent online.</li>
+            <li>Thanks for using. Feedback email to chooijqweb@gmail.com </li>
+        </ol>
     </div>
     <script src="https://printjs-4de6.kxcdn.com/print.min.js"></script>
     <script src="js/data.js"></script>
