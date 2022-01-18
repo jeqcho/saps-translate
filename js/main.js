@@ -39,6 +39,8 @@ function translate(text) {
     let reg = new RegExp('(?<![A-Za-z])' + malay +'(?![A-Za-z])', 'g');
     text=text.replace(reg, misc[malay]);
   }
+  let reg = new RegExp('\\[MA\\]', 'g');
+  text=text.replace(reg,'');
   return text
 }
 
