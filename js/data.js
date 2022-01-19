@@ -1,4 +1,6 @@
 var misc = {
+    "ANALISA KEPUTUSAN UJIAN &amp; PEPERIKSAAN BAGI TAHUN":"ANALYSIS OF TEST &amp; EXAMINATION RESULTS FOR THE YEAR",
+    "PEPERIKSAAN PERCUBAAN SPM":"SPM TRIALS",
     "No. KP": "No. IC",
     "Jantina": "Gender",
     "LELAKI": "MALE",
@@ -9,24 +11,28 @@ var misc = {
     "Bilangan Mata Pelajaran Daftar": "Number of Subjects Registered",
     "Jumlah Markah": "Total Marks",
     "Markah": "Marks",
-    "Kedudukan Dalam Kelas": "Class Ranking",
-    "Kedudukan Dalam Tingkatan": "Form Ranking",
-    "Peratus": "Percentage",
+    "Kedudukan Dalam Kelas": "Ranking in Class",
+    "Kedudukan Dalam Tingkatan": "Ranking in Form",
+    "Peratus": "Average Percentage",
+    "PERATUS": "Average Percentage",
     "Kehadiran": "Attendance",
     "Hari": "Days",
     "Gred Purata Pelajar": "Student Average Grade",
-    "Pencapaian Gred Keseluruhan": "Overall Grade Achievement",
+    "Pencapaian Gred Keseluruhan": "Overall grade achievement",
     "Keputusan": "Result",
     "LULUS": "PASSED",
     "GAGAL": "FAILED",
     "Nama Guru Kelas": "Name of Class Teacher",
     "PEPERIKSAAN PERTENGAHAN TAHUN": "MID YEAR EXAM",
-    "UJIAN 1": "FIRST TEST",
+    "UJIAN": "TEST",
     "TH":"ABSENT",
     "Gred": "Grade",
     "Mata Pelajaran": "Subjects",
     "Tingkatan": "Form",
-    "Nama": "Name"
+    "Nama": "Name",
+    "KDT": "Ranking in Form",
+    "KDK": "Ranking in Class",
+    
 }
 
 var subjects = {

@@ -31,7 +31,7 @@
         </ol>
             <div>
                 <div class="form-group">
-                    <label id="custom-file-upload" class="lead" ondrop="processFile(event)"
+                    <label id="custom-file-upload" class="lead" ondrop="dropHandler(event)"
                         ondragover="dragOverHandler(event);">
                         <input type="file" id="file-selector" accept=".html" onclick="purge()" oninput="processFile(event)">
                         <span id='file-label'>Drag file here or <u>click here</u> to choose</span>
