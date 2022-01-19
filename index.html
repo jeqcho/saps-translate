@@ -16,12 +16,12 @@
     <div class="screen container">
         <div class="mb-3"></div>
         <h1>Translate SAPS NKRA Online Tool</h1>
-        This tool translates your Malaysian school results/transcripts in SAPS
-        NKRA from Malay to English using the official subject names from SPM.
+        <p>This tool translates your Malaysian school results/transcripts from Malay to English using the official
+            subject names from SPM.</p>
         <h2>How to translate SAPS</h2>
         <ol>
-            <li>At <a target="_blank" href="https://sapsnkra.moe.gov.my/ibubapa2/index.php">SAPS</a>, choose <b>Papar
-                    Slip Keputusan</b>
+            <li>At <a target="_blank" href="https://sapsnkra.moe.gov.my/ibubapa2/index.php">SAPS NKRA</a>, choose
+                <b>Papar Slip Keputusan</b> or <b>Papar Markah Keputusan</b>.
             </li>
             <li>Save the page by pressing <kbd>⌘</kbd>+<kbd>S</kbd> for Mac or <kbd>Ctrl</kbd>+<kbd>S</kbd> for Windows
             </li>
@@ -29,25 +29,29 @@
             <li>Upload the file <b>slipma.php.html</b> using the button below or drag & drop.</li>
             <li>Choose "Preview" or "Print/Download PDF"</li>
         </ol>
-            <div>
-                <div class="form-group">
-                    <label id="custom-file-upload" class="lead" ondrop="dropHandler(event)"
-                        ondragover="dragOverHandler(event);">
-                        <input type="file" id="file-selector" accept=".html" onclick="purge()" oninput="processFile(event)">
-                        <span id='file-label'>Drag file here or <u>click here</u> to choose</span>
-                    </label>
-                </div>
-                <div class="form-group">
-                    <button type="button" disabled id="preview" class="btn btn-success" onclick="previewTranscript()">Preview</button>
-                    <button type="button" disabled id="print" class="btn btn-success"
-                        onclick="printJS('output', 'html')">Print/Download PDF</button>
-                </div>
+        <div>
+            <div class="form-group">
+                <label id="custom-file-upload" class="lead" ondrop="dropHandler(event)"
+                    ondragover="dragOverHandler(event);">
+                    <input type="file" id="file-selector" accept=".html" onclick="purge()"
+                        oninput="fileInputHandler(event)">
+                    <span id='file-label'>Drag file here or <u>click here</u> to choose</span>
+                </label>
             </div>
+            <div class="form-group">
+                <button type="button" disabled id="preview" class="btn btn-success"
+                    onclick="previewTranscript()">Preview</button>
+                <button type="button" disabled id="print" class="btn btn-success"
+                    onclick="printJS('output', 'html')">Print/Download PDF</button>
+            </div>
+        </div>
+        <h4>Notes about SAPS translation tool</h4>
         <ol>
             <li>School logo and teacher comments will be removed.</li>
             <li>For English translation of transcripts required by US universities.</li>
+            <li>You should send the translation and the original copy to your SMK school for verification.</li>
             <li>Translation of transcript is done locally on your computer. No data is sent online.</li>
-            <li>Thanks for using. Feedback email to chooijqweb@gmail.com </li>
+            <li>Feedback chooijqweb@gmail.com </li>
         </ol>
     </div>
     <script src="https://printjs-4de6.kxcdn.com/print.min.js"></script>

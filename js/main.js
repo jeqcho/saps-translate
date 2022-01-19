@@ -1,8 +1,34 @@
-function processFile(file) {
+function handleFile(file) {
   console.log("processing file");
   document.getElementById('file-label').innerHTML = "Loading...";
+  document.getElementById('custom-file-upload').classList.remove('bg-info');
+  document.getElementById('custom-file-upload').classList.remove('text-white');
   console.log('reading file');
+  if(file.type.split('/')[1]!='html')return fail('Not HTML file');
   reader.readAsText(file);
+}
+
+function fail(e) {
+  console.log(e);
+  document.getElementById('file-label').innerHTML = "Cannot translate file. Please double check the instructions.  Drag or <u>choose a new transcript</u>";
+  document.getElementById('custom-file-upload').classList.remove('bg-info');
+  document.getElementById('custom-file-upload').classList.add('text-danger');
+  document.getElementById('custom-file-upload').classList.remove('text-white');
+  document.getElementById('preview').disabled = true;
+  document.getElementById('print').disabled = true;
+}
+function processFile() {
+  try {
+    console.log('translating')
+    document.getElementById('output').innerHTML = translate(reader.result);
+    trimmer();
+    sessionStorage.setItem('transcript', document.getElementById('output').innerHTML);
+
+    let title = document.getElementById('output').getElementsByTagName('strong')[0].innerHTML;
+    done(title);
+  } catch (e) {
+    fail(e);
+  }
 }
 
 function fileInputHandler(event) {
@@ -11,7 +37,7 @@ function fileInputHandler(event) {
   const [file] = document.querySelector('input[type=file]').files;
   if (file) {
     console.log('reading file');
-    processFile(file);
+    handleFile(file);
   }
 }
 
@@ -28,7 +54,7 @@ function dropHandler(ev) {
       // If dropped items aren't files, reject them
       if (ev.dataTransfer.items[i].kind === 'file') {
         var file = ev.dataTransfer.items[i].getAsFile();
-        processFile(file);
+        handleFile(file);
         return;
       }
     }
@@ -36,7 +62,7 @@ function dropHandler(ev) {
     // Use DataTransfer interface to access the file(s)
     console.log('DATA TRANSFER FILES');
     for (var i = 0; i < ev.dataTransfer.files.length; i++) {
-      processFile(file);
+      handleFile(file);
       return;
     }
   }
@@ -45,17 +71,14 @@ function dropHandler(ev) {
 
 const reader = new FileReader();
 reader.addEventListener("load", () => {
-  console.log('translating')
-  document.getElementById('output').innerHTML = translate(reader.result);
-  trimmer();
-  sessionStorage.setItem('transcript', document.getElementById('output').innerHTML);
-  done();
+  processFile(reader.result);
 }, false);
 
-function done() {
-  document.getElementById('file-label').innerHTML = "Translation complete! Press preview or download below. Or drag or <u>choose a new transcript</u>";
+function done(title) {
+  document.getElementById('file-label').innerHTML = "Translation complete for <b>" + title + "</b>! Drag or <u>choose a new transcript</u>";
   document.getElementById('custom-file-upload').classList.add('bg-info');
   document.getElementById('custom-file-upload').classList.add('text-white');
+  document.getElementById('custom-file-upload').classList.remove('text-danger');
   document.getElementById('preview').disabled = false;
   document.getElementById('print').disabled = false;
   console.log('operations completed')
@@ -91,8 +114,6 @@ function trimmer() {
     let trs = document.getElementById('output').getElementsByTagName('tr')
     trs[trs.length - 1].remove();
   }
-
-
 }
 
 function dragOverHandler(event) {
