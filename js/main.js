@@ -76,6 +76,7 @@ reader.addEventListener("load", () => {
 
 function done(title) {
   document.getElementById('file-label').innerHTML = "Translation complete for <b>" + title + "</b>! Drag or <u>choose a new transcript</u>";
+  document.getElementsByTagName('title')[0].innerHTML = title;
   document.getElementById('custom-file-upload').classList.add('bg-info');
   document.getElementById('custom-file-upload').classList.add('text-white');
   document.getElementById('custom-file-upload').classList.remove('text-danger');
