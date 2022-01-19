@@ -8,6 +8,14 @@ function handleFile(file) {
   reader.readAsText(file);
 }
 
+function check(){
+  if(!!sessionStorage.getItem('transcript')){
+    document.getElementById('output').innerHTML=sessionStorage.getItem('transcript')
+    let title = document.getElementById('output').getElementsByTagName('strong')[0].innerHTML;
+    done(title)
+  }
+}
+
 function fail(e) {
   console.log(e);
   document.getElementById('file-label').innerHTML = "Cannot translate file. Please double check the instructions.  Drag or <u>choose a new transcript</u>";
@@ -75,7 +83,7 @@ reader.addEventListener("load", () => {
 }, false);
 
 function done(title) {
-  document.getElementById('file-label').innerHTML = "Translation complete for <b>" + title + "</b>! Drag or <u>choose a new transcript</u>";
+  document.getElementById('file-label').innerHTML = "Translation complete for <b>" + title + "</b>. <u>Choose a new transcript</u> or drop here";
   document.getElementsByTagName('title')[0].innerHTML = title;
   document.getElementById('custom-file-upload').classList.add('bg-info');
   document.getElementById('custom-file-upload').classList.add('text-white');
