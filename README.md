@@ -17,3 +17,6 @@ This tool translates your Malaysian school results/transcripts from Malay to Eng
 
 ## Feedback
 chooijqweb@gmail.com
+
+## License
+MIT
