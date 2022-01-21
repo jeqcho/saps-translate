@@ -5,7 +5,7 @@ var misc = {
     "Jantina": "Gender",
     "LELAKI": "MALE",
     "PEREMPUAN": "FEMALE",
-    "Bil": "No",
+    "Bil": "No.",
     "SLIP KEPUTUSAN": "RESULT SLIP",
     "PEPERIKSAAN AKHIR TAHUN": "YEAR END EXAM",
     "Bilangan Mata Pelajaran Daftar": "Number of Subjects Registered",
